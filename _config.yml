@@ -1,0 +1,36 @@
+markdown: kramdown
+highlighter: rouge
+
+permalink: /posts/:title.html
+excerpt_separator: "<!-- TOC -->"
+#excerpt_separator: "<!-- more -->"
+
+github: leo4678
+author: "davewli"
+email: leo4678#163.com
+name: "davewli-github笔记"
+url: https://leo4678.github.io/
+domain: leo4678.github.io
+all_categories: [
+["csknowledge", "计算机基础", "/posts/csknowledge.html"], #计算机基础课程相关，操作系统、数据库、数据结构、软件工程等
+["code", "编程相关", "/posts/code.html"], #编程相关，各类语言语法、特性、demo、技巧等
+["platforms", "平台相关", "/posts/platforms.html"], #平台工具相关，各类开发ide、各类机器学习/深度学习平台等
+["ml", "机器学习", "/posts/ml.html"], #机器学习理论，算法，论文等
+["dl", "深度学习", "/posts/dl.html"], #深度学习理论，算法，论文等
+["nlp", "自然语言处理", "/posts/nlp.html"], #nlp相关算法，论文等
+["cv", "计算视觉", "/posts/cv.html"], #cv
+["other", "其它","/posts/other.html"], #非计算机知识集合，读书笔记等
+["about", "关于","/about.html"] #个人介绍
+]
+
+paginate: 10
+paginate_path: "posts/page:num"
+timezone: China/Beijing
+
+collections:
+  docs:
+    output: true
+
+plugins:
+ - jekyll-paginate
+ - jekyll-toc

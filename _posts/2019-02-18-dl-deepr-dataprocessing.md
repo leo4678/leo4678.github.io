@@ -1,3 +1,11 @@
+---
+layout: post
+category: "dl"
+title: "deepr数据预处理"
+tags: [数据预处理, 标准化/Standardization, 归一化/正则化/Normalization, one-hot, muti-hot]
+urlcolor: blue
+---
+
 # 标准样本准备
 **目录**
 [TOC]

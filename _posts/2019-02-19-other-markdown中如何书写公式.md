@@ -27,7 +27,7 @@ tags: [markdown公式]
 <html>
 <br/>
 
-<img src='../assets/在线编写md数学公式.png' style='max-height: 450px;max-width:750px'/>
+<img src='/assets/在线编写md数学公式.png' style='max-height: 450px;max-width:750px'/>
 <br/>
 
 </html>

@@ -9,12 +9,12 @@ tags: [markdown公式]
 
 <!-- TOC -->
 
-- [1. 在线编写公式](#在线编写公式)
+- [1. 在线编写公式](#1-在线编写公式)
 	
-- [2. 借助其他插件显示](#借助其他插件显示)
-	- [2.1 借助Google Chart服务器](#2.1)
-	- [2.2 借助forkosh服务器](#2.2)
-	- [2.3 借助MathJax引擎（强烈推荐）](#2.3)
+- [2. 借助其他插件显示](#2-借助其他插件显示)
+	- [2.1 借助Google Chart服务器](#21-借助Google-Chart服务器)
+	- [2.2 借助forkosh服务器](#22-借助forkosh服务器)
+	- [2.3 借助MathJax引擎](#23-借助MathJax引擎)
 
 <!-- /TOC -->
 
@@ -50,7 +50,7 @@ ex:
 <img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 ```
 
-### 2.3 借助MathJax引擎（强烈推荐）
+### 2.3 借助MathJax引擎
 
 在markdown头部添加外部js引用
 ```html

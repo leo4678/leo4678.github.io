@@ -34,7 +34,7 @@ urlcolor: blue
 ### 1.1 连续型特征与连续型特征-相关性检验办法
 
 #### 1.1.1 pearson/皮尔森相关系数:协方差与标准差的商
-协方差参考：[https://www.zhihu.com/question/20852004](#)
+[协方差参考](https://www.zhihu.com/question/20852004)
 
 它有多种表达形式，常见有如下两种：
 
@@ -46,7 +46,7 @@ $$\rho_{x,y}=\frac{cov(x, y)}{\sigma_{x}\sigma_{y}}=\frac{E((x-\bar{x})(y-\bar{y
 
 $$\rho_{x,y}=\frac{\sum xy-\frac{\sum x\sum y}{N}}{\sqrt{(\sum x^{2}-\frac{(\sum x)^{2}}{N})(\sum y^{2}-\frac{(\sum y)^{2}}{N})}}$$
 
-> 其他公式参考：[http://blog.csdn.net/zhangjunjie789/article/details/51737366](#)
+> [其他公式参考](http://blog.csdn.net/zhangjunjie789/article/details/51737366)
 
 ```python
 from math import sqrt

@@ -24,9 +24,9 @@ urlcolor: blue
 
 独立研究者 Karanbir Chahal 和 Manraj Singh Grover 与 IBM 的研究者 Kuntal Dey 近日发布了一篇论文，对深度神经网络的分布式训练方法进行了全面系统的总结，其中涉及到训练算法、优化技巧和节点之间的通信方法等。
 
-[论文下载](https://leo4678.github.io/assets/AHitchhikersGuideOnDistributedTrainingOfDNNs.pdf)
+[原始论文](https://arxiv.org/abs/1810.11787)
 
-[原始论文链接](https://arxiv.org/abs/1810.11787)
+[参考](https://www.jiqizhixin.com/articles/2018-11-05-6)
 
 ## 1. 分布式训练产生原因
 

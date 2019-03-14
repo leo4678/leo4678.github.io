@@ -1,0 +1,225 @@
+---
+layout: post
+category: "cv"
+title: "CNN网络介绍"
+tags: [CNN]
+urlcolor: blue
+---
+
+目录
+
+<!-- TOC -->
+
+- [1. CNN是什么](#1-CNN是什么)
+- [2. 卷积层的作用](#2-卷积层的作用)
+- [3. 池化层的作用](#3-池化层的作用)
+- [4. 总结](#4-总结)
+
+<!-- /TOC -->
+
+参考[CNN 入门讲解专栏阅读顺序](https://zhuanlan.zhihu.com/p/33855959)
+
+## 1. CNN是什么
+
+CNN 全名Deep Convolutional Neural Networks，首次提出被用来解决图像分类问题，之后在图像其他领域广泛使用，[原始论文](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)。
+
+一个简单的CNN网络包括卷积层，激活层，池化层（也称采样层），全连接层，其网络结构如下图所示：
+
+<html>
+<br/>
+
+<img src='/assets/cnn.png' style='max-height:450px;max-width:600px;'/>
+<br/>
+
+</html>
+
+如下是caffe配置的一个基于CNN的LeNet网络结构
+
+```
+name: "LeNet"
+layer { #输入层
+  name: "mnist"
+  type: "Data"
+  top: "data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  transform_param {
+    scale: 0.00390625
+  }
+  data_param {
+    source: "examples/mnist/mnist_train_lmdb"
+    batch_size: 64
+    backend: LMDB
+  }
+}
+layer {
+  name: "mnist"
+  type: "Data"
+  top: "data"
+  top: "label"
+  include {
+    phase: TEST
+  }
+  transform_param {
+    scale: 0.00390625
+  }
+  data_param {
+    source: "examples/mnist/mnist_test_lmdb"
+    batch_size: 100
+    backend: LMDB
+  }
+}
+layer { #卷积层
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 20
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer { #池化层
+  name: "pool1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 50
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "conv2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer { #全连接层
+  name: "ip1"
+  type: "InnerProduct"
+  bottom: "pool2"
+  top: "ip1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 500
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer { #激活层
+  name: "relu1"
+  type: "ReLU"
+  bottom: "ip1"
+  top: "ip1"
+}
+layer {
+  name: "ip2"
+  type: "InnerProduct"
+  bottom: "ip1"
+  top: "ip2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 10
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer { #评估
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "ip2"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
+}
+layer { #loss层
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "ip2"
+  bottom: "label"
+  top: "loss"
+}
+```
+
+## 2. 卷积层的作用
+
+简单来说，卷积就是对特征进行一次特征变换，变换的操作方法为卷积，这种方法能够使得图像的边缘突出，非边缘灰度，采用的原理是边缘部分的一二阶微分变化较大。
+
+卷积运算 参考[卷积神经网络CNN完全指南一](https://zhuanlan.zhihu.com/p/27908027)第2部分
+
+## 3. 池化层的作用
+
+池化层的目的是为了保留图像某一区域的特点，达到扩大视野的目标。包括两种方式，一种方式是取最大值(Max Pooling)，一种方式是取平均值(Average Pooling)
+
+池化运算 参考[卷积神经网络CNN完全指南一](https://zhuanlan.zhihu.com/p/27908027)第4部分
+
+## 4. 总结
+
+原始图像输入之后，会得到RGB三通道像素点值，分别对三通道像素点做卷积，得到轮廓特征，然后池化，扩大视野面积，不断往复这种操作，以便得到一种图像结构，是的简单分类器能够依靠整体轮廓特征对其进行分类。
+
+CNN操作的实际图像表现，可查看[CNN 入门讲解：图片在卷积神经网络中是怎么变化的（前向传播 Forward Propagation）](https://zhuanlan.zhihu.com/p/34222451)

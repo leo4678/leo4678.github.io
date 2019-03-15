@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "links"
-title: "【置顶】导引——nlp论文集合"
-tags: [nlp, ]
+category: "nlp"
+title: "nlp论文集合"
+tags: [nlp]
 ---
 
 目录

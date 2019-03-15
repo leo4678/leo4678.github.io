@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "ml"
-title: "推荐系统"
-tags: [svd, svd++, als, rbm-cf, fm]
+title: "推荐系统传统模型发展应用综述"
+tags: [推荐系统]
 ---
 
 目录

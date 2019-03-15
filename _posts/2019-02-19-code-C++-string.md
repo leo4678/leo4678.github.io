@@ -2,7 +2,7 @@
 layout: post
 category: "code"
 title: "C++ 字符串处理技巧"
-tags: [C++, 字符串处理]
+tags: [C++]
 ---
 
 目录

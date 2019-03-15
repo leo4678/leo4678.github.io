@@ -2,7 +2,7 @@
 layout: post
 category: "platforms"
 title: "深度神经网络分布式训练方法"
-tags: [深度网络分布式训练，分布式随机梯度下降的同步和异步变体，各种All Reduce梯度聚合策略]
+tags: [分布式训练]
 urlcolor: blue
 ---
 

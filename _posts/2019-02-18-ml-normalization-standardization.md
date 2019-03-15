@@ -2,7 +2,7 @@
 layout: post
 category: "ml"
 title: "归一化和标准化"
-tags: [归一化/Normalization, 标准化/Standardization]
+tags: [数据预处理]
 urlcolor: blue
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 category: "ml"
 title: "逻辑/线性回归/GLM"
-tags: [逻辑回归, 线性回归, 广义线性模型/GLM(Generalized Linear Model)]
+tags: [回归问题]
 urlcolor: blue
 ---
 

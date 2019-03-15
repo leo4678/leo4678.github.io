@@ -2,7 +2,7 @@
 layout: post
 category: "csknowledge"
 title: "数学基础"
-tags: [数学，高数，线性代数，概率论]
+tags: [数学基础]
 urlcolor: blue
 ---
 

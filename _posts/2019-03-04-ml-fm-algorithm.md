@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "ml"
-title: "FM（因子分解机）"
-tags: [ml，FM]
+title: "FM（因子分解机）原理及应用"
+tags: [推荐系统]
 urlcolor: blue
 ---
 

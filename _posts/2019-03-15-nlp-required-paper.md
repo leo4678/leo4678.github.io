@@ -2,7 +2,7 @@
 layout: post
 category: "nlp"
 title: "nlp论文集合"
-tags: [nlp]
+tags: [nlp论文]
 ---
 
 目录

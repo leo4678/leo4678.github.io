@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "knowledge"
+category: "ml"
 title: "损失函数"
 tags: [loss function, 损失函数]
 ---

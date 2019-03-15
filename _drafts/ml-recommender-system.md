@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "links"
-title: "【置顶】导引——推荐系统论文集合"
-tags: [推荐系统, ]
+category: "ml"
+title: "推荐系统论文集合"
+tags: [推荐系统]
 
 ---
 
@@ -10,13 +10,12 @@ tags: [推荐系统, ]
 
 <!-- TOC -->
 
-- [各种综述](#%E5%90%84%E7%A7%8D%E7%BB%BC%E8%BF%B0)
-- [一些经典论文](#%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E8%AE%BA%E6%96%87)
-  - [dssm](#dssm)
-  - [youtube](#youtube)
-  - [序列建模](#%E5%BA%8F%E5%88%97%E5%BB%BA%E6%A8%A1)
-  - [标签体系](#%E6%A0%87%E7%AD%BE%E4%BD%93%E7%B3%BB)
-- [最新paper](#%E6%9C%80%E6%96%B0paper)
+- [1. 综述](#1-综述)
+- [2. 经典论文](#2-经典论文)
+  - [2.1 dssm](#21-dssm)
+  - [2.2 youtube](#22-youtube)
+  - [2.3 序列建模](#23-序列建模)
+- [3. 最新paper](#3-最新paper)
   - [A review on deep learning for recommender systems: challenges and remedies](#a-review-on-deep-learning-for-recommender-systems-challenges-and-remedies)
   - [Next Item Recommendation with Self-Attention](#next-item-recommendation-with-self-attention)
   - [Metric Factorization: Recommendation beyond Matrix Factorization](#metric-factorization-recommendation-beyond-matrix-factorization)
@@ -36,37 +35,27 @@ tags: [推荐系统, ]
 
 <!-- /TOC -->
 
-## 各种综述
+## 综述
 
-[https://daiwk.github.io/posts/ml-recommender-systems.html](https://daiwk.github.io/posts/ml-recommender-systems.html)
-
-[Batmaz2018\_Article\_AReviewOnDeepLearningForRecomm](https://daiwk.github.io/assets/Batmaz2018_Article_AReviewOnDeepLearningForRecomm.pdf)
-
-[Deep Learning based Recommender System: A Survey and New Perspectives](https://daiwk.github.io/assets/DL_on_RS.pdf)
+[从item-base到svd再到rbm，多种Collaborative Filtering(协同过滤算法)从原理到实现](https://blog.csdn.net/dark_scope/article/details/17228643)
 
 [Deep Learning for Matching in Search and Recommendation](https://www.comp.nus.edu.sg/~xiangnan/sigir18-deep.pdf)
 
-个人小结(更新中)：[https://daiwk.github.io/posts/dl-match-for-search-recommendation.html](https://daiwk.github.io/posts/dl-match-for-search-recommendation.html)
-
-## 一些经典论文
+## 经典论文
 
 ### dssm
 
-[https://daiwk.github.io/posts/nlp-dssm.html](https://daiwk.github.io/posts/nlp-dssm.html)
+[待补充]
 
 ### youtube
 
-[https://daiwk.github.io/posts/dl-youtube-video-recommendation.html](https://daiwk.github.io/posts/dl-youtube-video-recommendation.html)
+[待补充]
 
 ### 序列建模
 
 [Session-based Recommendations with Recurrent Neural Networks](https://arxiv.org/abs/1511.06939)
 
 paddle实现：[https://github.com/PaddlePaddle/models/tree/develop/fluid/PaddleRec/gru4rec](https://github.com/PaddlePaddle/models/tree/develop/fluid/PaddleRec/gru4rec)
-
-### 标签体系
-
-[https://daiwk.github.io/posts/nlp-tagspaces.html](https://daiwk.github.io/posts/nlp-tagspaces.html)
 
 ## 最新paper
 

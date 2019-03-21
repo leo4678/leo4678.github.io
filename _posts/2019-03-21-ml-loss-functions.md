@@ -37,7 +37,7 @@ $$\theta^{*}=\underset{\theta }{argmin}\frac{1}{N}\sum_{i}^{N}L(y_{i},f(x_{i};\t
 
 ## 2. 常用损失函数
 
-损失函数必须是一个对称函数（PS：大家可能会说用屁股想都知道，但是我自己确实是看了几幅\\((y-f(x), Loss)\\)函数图才意识到，突然意识到不自己从根源思考是多么可怕）
+损失函数必须是一个对称函数（PS：大家可能会说用屁股想都知道，但是我自己确实是看了几幅\\((y-f(x), Loss)\\)函数图才感触到，突然意识到不自己从根源思考是多么可怕）
 
 ### 2.1 回归模型常用损失函数
 
@@ -98,7 +98,7 @@ def huber(true, pred, delta):
 
 $$L(y,y^{p})=\sum_{i=1}^{n}log(cosh(y_{i}^{p}-y_{i}))$$
 
-优点：对于较小的x，\\(log(cosh(x))\\)近似等于\\(\frac{x^{2}}{2}\\)，对于较大的x，近似等于\\(\left |x  \right |-log(2)\\)。这意味着logcosh基本类似于均方误差，但不易受到异常点的影响。**它具有Huber损失所有的优点，但不同于Huber损失的是，Log-cosh二阶处处可微**。但Log-cosh损失也并非完美，其仍存在某些问题。比如**误差很大的话，一阶梯度和Hessian会变成定值，这就导致XGBoost出现缺少分裂点的情况**。
+优点：对于较小的x，log(cosh(x))近似等于x^2/2，对于较大的x，近似等于\\( \left |x  \right |-log(2) \\) 。这意味着logcosh基本类似于均方误差，但不易受到异常点的影响。**它具有Huber损失所有的优点，但不同于Huber损失的是，Log-cosh二阶处处可微**。但Log-cosh损失也并非完美，其仍存在某些问题。比如**误差很大的话，一阶梯度和Hessian会变成定值，这就导致XGBoost出现缺少分裂点的情况**。
 
 ```python
 # true: Array of true target variable
@@ -151,8 +151,8 @@ Huber损失的缺点是，它包含一个超参数，需要不断调整\\(\delta
 #### 2.2.1 zero-one loss/0-1损失
 
 $$L(y,f(x))=\left\{\begin{matrix}
-0;if yf(x)\geq 0\\ 
-1;if yf(x)< 0
+0;if\quad yf(x)\geq 0\\ 
+1;if\quad yf(x)< 0
 \end{matrix}\right.$$
 
 上述公式，假定任务类型为二分类，label为-1或者+1，f(x)>=0 分类为+1，f(x)<0 分类为-1。 0-1损失对每个错分类点都施以相同的惩罚，这样那些“错的离谱“ (即 \\(margin \rightarrow -\infty )\\)的点并不会收到大的关注，这在直觉上不是很合适。 另外0-1损失不连续、非凸，优化困难，因而常使用其他的代理损失函数进行优化。

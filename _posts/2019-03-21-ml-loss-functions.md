@@ -2,7 +2,7 @@
 layout: post
 category: "ml"
 title: "损失函数"
-tags: [loss function, 损失函数]
+tags: [损失函数,]
 ---
 
 目录

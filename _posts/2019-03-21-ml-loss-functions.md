@@ -98,7 +98,7 @@ def huber(true, pred, delta):
 
 $$L(y,y^{p})=\sum_{i=1}^{n}log(cosh(y_{i}^{p}-y_{i}))$$
 
-优点：对于较小的x，log(cosh(x))近似等于x^2/2，对于较大的x，近似等于\\( \left |x  \right |-log(2) \\) 。这意味着logcosh基本类似于均方误差，但不易受到异常点的影响。**它具有Huber损失所有的优点，但不同于Huber损失的是，Log-cosh二阶处处可微**。但Log-cosh损失也并非完美，其仍存在某些问题。比如**误差很大的话，一阶梯度和Hessian会变成定值，这就导致XGBoost出现缺少分裂点的情况**。
+优点：对于较小的x，log(cosh(x))近似等于x^2/2，对于较大的x，近似等于abs(x)-log(2)。这意味着logcosh基本类似于均方误差，但不易受到异常点的影响。**它具有Huber损失所有的优点，但不同于Huber损失的是，Log-cosh二阶处处可微**。但Log-cosh损失也并非完美，其仍存在某些问题。比如**误差很大的话，一阶梯度和Hessian会变成定值，这就导致XGBoost出现缺少分裂点的情况**。
 
 ```python
 # true: Array of true target variable
@@ -232,7 +232,7 @@ L(Y,P(Y|X)) = -\log P(Y|X)
 
 $$L(y,f(x))=-ylog(f(x))-(1-y)log(1-f(x))$$
 
-在逻辑回归中，当定义\\(label\in \{-1,+1\}\\)或者\\(label\in \{0,1\}\\)，其损失函数是不一样的，推到如下：
+在逻辑回归中，当定义\\(label\in \{-1,+1\}\\)或者\\(label\in \{0,1\}\\)，其损失函数是不一样的，推导如下：
 
 <html>
 <br/>

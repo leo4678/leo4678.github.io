@@ -8,11 +8,13 @@ urlcolor: blue
 <!-- TOC -->
 
 - [1. Modor架构](#1-Modor架构)
-- [2. 特征配置/算法配置](#2-特征配置/算法配置)
-- [3. 数据准备](#3-数据准备)
-- [4. 算法](#4-算法)
-- [5. 日志](#5-日志)
-- [6. 部署](#6-部署)
+- [2. Conf/配置](#2-Conf/配置)
+- [3. Application/应用层](#3-Application/应用层)
+- [4. DeployUtils/部署层](#4-DeployUtils/部署层)
+- [5. AlgorithmLib/算法层](#5-AlgorithmLib/算法层)
+- [6. Core/核心层](#6-Core/核心层)
+- [7. CommonUtils/通用工具层](#6-CommonUtils/通用工具层)
+- [8. 各组件调用详解](#6-各组件调用详解)
 
 <!-- /TOC -->
 
@@ -26,18 +28,18 @@ urlcolor: blue
 
 说明：
 
+- Conf: 
+	- Feature/Algo Conf 数据库中模型训练/预测任务特征配置，算法参数配置信息
 - Application: 
 	- ModelTrain 模型训练任务入口
 	- ModelPredict 模型预测任务入口
 - DeployUtils:
 	- FeatureDeploy 特征出库
 	- IndexDeploy 特征编码出库
-- TaskConf: 
-	- Feature/Algo Conf 模型训练/预测任务特征配置，算法参数配置
 - AlgorithmLib: 
 	- Model 模型持久化，参数加载，预测接口等
 	- AlgorithmFactory 根据算法配置构建算法实例
-	- Optimizer
+	- Optimizer 优化器
 		- Gradient 负责loss、梯度计算
 		- Updater 负责模型参数更新
 	- Similarity 用户物品相似度算法集
@@ -83,27 +85,29 @@ urlcolor: blue
 		- HiveUtil 访问Hive
 		- DatabaseTableInfo 数据仓库表信息，包括分区信息、字段、数据格式等
 
-下面通过一个模型训练任务说明一下上述主要组件如何协同工作
+下面通过一个**模型训练的时序图**说明上述**主要组件如何协同工作**
 
+<html>
+<br/>
+<img src='modor算法训练时序图.png' style='max-height:578px;max-width:690px;'/>
+<br/>
+</html>
 
+## 2. Conf/配置
 
-## 2. 特征配置/算法配置
+该模块指的是在[微信支付/数据平台/算法平台/特征和算法配置](http://wxpay.oa.com/dataplatform/index/data?page=7_0)进行相关配置。它的作用是统一管理算法训练时所需要的信息，包括**特征注册、算法基础信息注册、算法使用特征信息**。
 
-## 3. 数据准备
+## 3. Application/应用层
 
-## 4. 算法
+## 4. DeployUtils/部署层
 
-## 5. 日志
+## 5. AlgorithmLib/算法层
 
-## 6. 部署
+## 6. Core/核心层
 
-## 7. 其他
+## 7. CommonUtils/通用工具层
 
-### 7.1 采样
-
-### 7.2 召回
-
-### 7.3 评估
+## 8. 各组件调用详解
 
 
 

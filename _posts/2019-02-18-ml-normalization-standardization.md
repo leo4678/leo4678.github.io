@@ -2,7 +2,7 @@
 layout: post
 category: "ml"
 title: "归一化和标准化"
-tags: [数据预处理]
+tags: [特征工程]
 urlcolor: blue
 ---
 

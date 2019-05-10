@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "dl"
-title: "YoutubeDNN 论文中设计到的十大问题"
+title: "YoutubeDNN 论文中涉及到的十大问题"
 tags: [推荐,]
 urlcolor: blue
 ---
